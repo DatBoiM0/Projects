@@ -1,0 +1,20 @@
+- hosts: all
+  become: yes
+
+  tasks:
+  - name: Update all packages to their latest version
+    apt:
+      name: "*"
+      state: latest
+
+  - name: Install apache httpd (state=present is optional)
+    apt:
+      name: apache2
+      update_cache: yes
+      state: present
+
+  - name: Ensure Git is installed
+    apt:
+      name: git
+      update_cache: yes
+      state: present
