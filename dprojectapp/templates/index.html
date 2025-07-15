@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 style="
+  background-image: url('https://st3.depositphotos.com/1498528/12730/v/950/depositphotos_127304050-stock-illustration-logo-of-panda-bear-with.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  font-family: sans-serif;
+  color: #d61010;
+  
+  padding: 50px;
+">
+  Products
+</h1>
+
+<!--
+<style>
+    .cardsDiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+</style>
+-->
+<style>
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(0, 0, 0);
+}
+
+.flex-container > div {
+  background-color: #d61010;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+</style>
+
+<div class="flex-container">
+    {% for product in products %}
+    <div class="card" style="width: 27rem;">
+<!--        <img class="card-img-top" src="{{ product.image_url }}" alt="Card image cap" Style="width:95%"> -->
+        <img class="card-img-top" src="{{ product.image_url }}" alt="Card image cap" Style="width:400px;height:400px;">
+        <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">${{ product.price }}</p>
+            <a href="#" class="btn btn-primary">Add to Cart</a>
+        </div>
+    </div>
+     {% endfor %}
+</div>
+
+
+{% endblock %}

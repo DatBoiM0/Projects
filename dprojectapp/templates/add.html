@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Customer Form</title>
+</head>
+  <title>Add Customer</title>
+ <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      background-image: url('https://st3.depositphotos.com/1498528/12730/v/950/depositphotos_127304050-stock-illustration-logo-of-panda-bear-with.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      text-align: center;
+      color: #d61010;
+      padding: 50px;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+<h1>Add Customer</h1>
+
+<<style>
+    .form-label {
+      color: #d61010;
+      font-family:sans-serif;
+    }
+
+    input {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<form action="addrecord/" method="post">
+  {% csrf_token %}
+
+  <span class="form-label">First Name:</span><br>
+  <input name="first"><br><br>
+
+  <span class="form-label">Last Name:</span><br>
+  <input name="last"><br><br>
+
+  <span class="form-label">Middle Initial:</span><br>
+  <input name="middle"><br><br>
+
+  <span class="form-label">Email:</span><br>
+  <input name="email"><br><br>
+
+  <span class="form-label">Phone:</span><br>
+  <input name="phone"><br><br>
+
+  <span class="form-label">Avatar URL:</span><br>
+  <input name="avatar"><br><br>
+
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

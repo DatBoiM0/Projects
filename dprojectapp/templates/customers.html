@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 style="
+  background-image: url('https://st3.depositphotos.com/1498528/12730/v/950/depositphotos_127304050-stock-illustration-logo-of-panda-bear-with.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  font-family: sans-serif;
+  color: #8fb407;
+  padding: 50px;
+">
+  Customers 
+</h1>
+
+<style>
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #d61010; 
+}
+
+.flex-container > div {
+  background-color: #8fb407;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+</style>
+
+<div class="flex-container">
+    {% for customer in customers %}
+    <div class="card" style="width: 27rem;">
+        <img class="card-img-top" src="{{ customer.avatar_url }}" alt="Card image cap" Style="width:400px;height:400px;">
+        <div class="card-body">
+            <h3 class="card-title">{{customer.id}} {{ customer.fname}} {{customer.lname }}</h3>
+            <p class="card-text">
+                {{ customer.email }}
+                {{ customer.phone }}
+            </p>
+            <a href="/update/{{ customer.id }}">Update Customer Info</a>
+            <br></br>
+            <a href="/delete/{{ customer.id }}">Delete Customer</a>
+            <br></br>
+            <a href="https://upload.wikimedia.org/wikipedia/commons/2/26/You_Have_Been_Hacked%21.jpg" class="btn btn-primary">CLOSE</a>
+        </div>
+    </div>
+     {% endfor %}
+</div>
+
+
+{% endblock %}
